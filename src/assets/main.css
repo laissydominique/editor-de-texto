@@ -1,0 +1,135 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(205, 170, 237);
+}
+
+.show-text {
+  border: 1px solid white;
+  display: flex;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.copy button,
+.clear button {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(245, 245, 245);
+  color: rgb(204, 0, 255);
+  font-weight: bold;
+}
+
+.show-text {
+  margin-top: 15rem;
+}
+
+.text-content{
+  padding: 1rem;
+  color: white;
+  font-size: 30px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+label {
+  margin-bottom: 0.3rem;
+  margin-top: 1rem;
+}
+
+.select-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.size,
+.fonts,
+.color {
+  display: flex;
+  flex-direction: column;
+}
+
+.size select,
+.fonts select,
+.color input {
+  width: 120px;
+  height: 30px;
+}
+
+.click-actions {
+  display: flex;
+  gap: 2rem;
+  margin-top: 30px;
+}
+
+.act-bolder, .act-italic, .act-line{
+
+cursor: pointer;}
+
+.textarea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-area {
+  width: 30rem;
+  height: 8rem;
+  margin-top: 6rem;
+}
+
+.bolder-text {
+  font-weight: bolder;
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+.line-text {
+  text-decoration: underline;
+}
+
+.act-bolder {
+  font-weight: bold;
+}
+
+.act-italic {
+  font-style: italic;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+}
