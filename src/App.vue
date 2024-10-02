@@ -192,7 +192,7 @@ function generatePhrase() {
             <input
               v-model="color"
               type="color"
-              value="#ff0000"
+              value="#fff"
               @change="changeColor"
             />
           </div>
