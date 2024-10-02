@@ -6,7 +6,7 @@ const isBolder = ref(false);
 const isItalic = ref(false);
 const haveLine = ref(false);
 const font = ref("");
-const color = ref("#A825E5");
+const color = ref("#fff");
 const size = ref(null);
 
 function changeFont(event) {
@@ -53,12 +53,38 @@ function clearText(){
   text.value = '';
 }
 
+function generatePhrase(){
+  const phrases = [  "Acredite em você e tudo será possível.",
+  "O sucesso é a soma de pequenos esforços repetidos diariamente.",
+  "A persistência é o caminho do êxito.",
+  "Você é mais forte do que imagina, acredite.",
+  "A verdadeira coragem é seguir em frente mesmo com medo.",
+  "Não deixe que o medo de errar impeça você de tentar.",
+  "Cada desafio é uma oportunidade para crescer.",
+  "A mudança começa no momento em que você decide agir.",
+  "O fracasso é uma lição, não um destino.",
+  "O único limite para o seu sucesso é a sua mente.",   "Tudo o que você sempre quis está do outro lado do medo.",
+  "Grandes coisas nunca vêm de zonas de conforto.",
+  "Acredite no poder dos seus sonhos e siga em frente.",
+  "O sucesso não é o fim, o fracasso não é fatal: é a coragem de continuar que conta.",
+  "Se você pode sonhar, você pode realizar.",
+  "A única pessoa que você deve se esforçar para ser melhor do que é a pessoa que você foi ontem.",
+  "Desafios são o que tornam a vida interessante, e superá-los é o que dá significado à vida.",
+  "Não é sobre ser o melhor, é sobre ser melhor do que você foi ontem.",
+  "Você não pode mudar o passado, mas pode escrever um novo futuro.",
+  "As coisas boas acontecem para quem acredita, melhores para quem é paciente, e as melhores para quem não desiste."];
+
+  const phrase =  phrases[Math.floor(Math.random() * phrases.length)];
+  text.value = phrase;
+}
+
 </script>
 
 <template>
   <div class="container">
     <div class="main"> 
 
+      <div class="border">
     <div class="show-text">
       <p
         class="text-content"
@@ -68,7 +94,13 @@ function clearText(){
         {{ text ? text : 'Seu texto irá aparecer aqui'  }}
       </p>
     </div>
+  </div>
 <div class="buttons">
+
+  <div class="generate">
+        <button @click="generatePhrase">Gerar frase</button>
+      </div>
+
     <div class="copy">
         <button @click="copyText">Copiar</button>
       </div>
@@ -76,8 +108,10 @@ function clearText(){
       <div class="clear">
         <button @click="clearText">Limpar</button>
       </div>
+
     </div>
     <div class="textarea">
+      <label for="text">Crie uma frase.</label>
       <textarea
         name="textarea"
         id="text-area"

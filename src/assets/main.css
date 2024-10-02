@@ -3,25 +3,37 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: white;
+  outline: none; 
 }
 
 html,
-body,
-.container {
+body {
   width: 100%;
-  height: 100vh;
+  min-height: 100%;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(205, 170, 237);
+  background-image: url('imgs/image.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .show-text {
-  border: 1px solid white;
+  max-width: 90%;
+  border: 0.2px solid white;
+  background-color: rgba(255, 255, 255, 0);
   display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 15rem;
 }
 
 .main {
@@ -33,29 +45,26 @@ body,
 
 .buttons {
   display: flex;
-  margin-top: 1rem;
+  margin-top: 3rem;
   gap: 1rem;
 }
 
 .copy button,
-.clear button {
+.clear button, 
+.generate button {
   cursor: pointer;
-  padding: 4px;
+  padding: 8px;
   border-radius: 5px;
   border: none;
   background-color: rgb(245, 245, 245);
-  color: rgb(204, 0, 255);
+  color: #3666B4;
   font-weight: bold;
 }
 
-.show-text {
-  margin-top: 15rem;
-}
-
-.text-content{
+.text-content {
   padding: 1rem;
   color: white;
-  font-size: 30px;
+  font-size: 2rem;
 }
 
 .actions {
@@ -86,30 +95,54 @@ label {
 .size select,
 .fonts select,
 .color input {
-  width: 120px;
+  width: 100%;
+  max-width: 120px;
   height: 30px;
 }
 
 .click-actions {
   display: flex;
-  gap: 2rem;
+  gap: 5rem;
   margin-top: 30px;
+  width: 100%;
+  max-width: 392px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.528);
 }
 
-.act-bolder, .act-italic, .act-line{
-
-cursor: pointer;}
+.act-bolder, 
+.act-italic, 
+.act-line {
+  color: rgba(0, 78, 195, 0.685);
+  cursor: pointer;
+  font-size: 1.3rem;
+}
 
 .textarea {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 6rem;
+  width: 100%;
 }
 
-.text-area {
-  width: 30rem;
+.textarea label {
+  margin-bottom: 0.3rem;
+  color: #9cc2ff;
+}
+
+textarea {
+  resize: none; 
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.528);
+  overflow: hidden;
+  width: 100%;
+  max-width: 30rem;
   height: 8rem;
-  margin-top: 6rem;
 }
 
 .bolder-text {
@@ -132,4 +165,61 @@ cursor: pointer;}
   font-style: italic;
   font-family: "Courier New", Courier, monospace;
   font-weight: bolder;
+}
+
+@media (max-width: 500px) {
+
+  .main{
+      display: grid;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .border{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+  }
+
+  .text-content {
+    font-size: 1.5rem;
+  }
+
+  textarea{
+    width:339px ;
+  }
+
+  .textarea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+  }
+
+  .show-text {
+    margin-top: 5rem;
+  }
+
+  .actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+
+  .click-actions {
+    gap: 1rem;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .size select, .size label{
+    display: none;
+  }
 }
